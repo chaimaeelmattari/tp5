@@ -9,12 +9,12 @@ const fastify = require('fastify')({
 
 const { connectToDatabase } = require('./databases/db');
 const Book = require('./modele/livre');
+const routes = require('./routes/routes');
 
 fastify.register(require('@fastify/cors'));
 
-fastify.get('/', async (request, reply) => {
-    return { message: 'Hello, c est ton premier serveur Fastify!' };
-});
+// Register your routes
+fastify.register(routes);
 
 fastify.listen(3000, '0.0.0.0', (err, address) => {
     if (err) throw err;
