@@ -77,3 +77,5 @@ async function deleteLivre(request, reply) {
 }
 
 module.exports = { getAllLivre, getLivreById, addLivre, updateLivre, deleteLivre };
+
+
